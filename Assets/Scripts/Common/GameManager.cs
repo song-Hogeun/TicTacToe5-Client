@@ -10,6 +10,8 @@ public class GameManager : Singleton<GameManager>
     private Canvas _canvas;
 
     private GameLogic _gameLogic;
+
+    private GameUIController _gameUIController;
     
     public void ChangeToGameScene(Constants.GameType gameType)
     {
@@ -33,6 +35,11 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    public void SetGameTurnPanel(GameUIController.GameTurnPanelType gameTurnPanelType)
+    {
+        _gameUIController.SetGameTurnPanel(gameTurnPanelType);
+    }
+
     protected override void OnSceneLoad(Scene scene, LoadSceneMode mode)
     {
         _canvas = FindFirstObjectByType<Canvas>();
@@ -41,11 +48,15 @@ public class GameManager : Singleton<GameManager>
         {
             // Block 초기화
             var blockController = FindFirstObjectByType<BlockController>();
-            blockController.InitBlocks();
+            if (blockController != null)
+            {
+                blockController.InitBlocks();   
+            }
 
+            _gameUIController = FindFirstObjectByType<GameUIController>();
             if (_gameLogic != null)
             {
-                
+                _gameUIController.SetGameTurnPanel(GameUIController.GameTurnPanelType.None);
             }
 
             _gameLogic = new GameLogic(blockController, _gameType);

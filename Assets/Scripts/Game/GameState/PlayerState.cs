@@ -38,11 +38,11 @@ public class PlayerState : BasePlayerState
     {
         if (_isFirstPlayer)
         {
-            // TODO: 게임 로직에게 Second Player의 상태를 활성화 해라고 전달
+            GameManager.Instance.SetGameTurnPanel(GameUIController.GameTurnPanelType.ATurn);
         }
         else
         {
-            // TODO: 게임 로직에게 First Player의 상태를 활성화 해라고 전달
+            GameManager.Instance.SetGameTurnPanel(GameUIController.GameTurnPanelType.BTurn);
         }
     }
     #endregion

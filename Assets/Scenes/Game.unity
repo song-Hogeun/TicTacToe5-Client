@@ -1778,6 +1778,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c141fadd43c3a1c48bd5f5d227701fa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerATurnPanel: {fileID: 1197775309}
+  playerBTurnPanel: {fileID: 378093258}
+  playerTurnInfoText: {fileID: 1475491207}
 --- !u!1001 &1712964765
 PrefabInstance:
   m_ObjectHideFlags: 0
