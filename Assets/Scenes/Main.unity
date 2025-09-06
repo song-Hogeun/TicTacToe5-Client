@@ -2024,6 +2024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   confirmPanel: {fileID: 4333804351041248939, guid: c0ea609ce510ed34d98e183834ecdb72, type: 3}
+  signinPanel: {fileID: 4333804351041248939, guid: e7dc40499ea09144080af1e53f689434, type: 3}
 --- !u!1 &2015616696
 GameObject:
   m_ObjectHideFlags: 0
